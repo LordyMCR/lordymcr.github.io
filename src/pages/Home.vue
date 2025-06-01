@@ -60,8 +60,8 @@ onMounted(() => {
 
     <main>
         <!-- Home/About Section -->
-        <section id="home" class="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-700 text-center text-gray-900 dark:text-white">
-            <div class="w-full max-w-4xl mx-auto px-4 flex flex-col items-center gap-8 py-16">
+        <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-700 text-center text-gray-900 dark:text-white">
+            <div class="w-full max-w-2xl px-4 flex flex-col items-center gap-8 py-16">
                 <!-- Profile Image -->
                 <img
                     src="/images/profile-cropped.png"
@@ -97,7 +97,7 @@ onMounted(() => {
         </section>
 
         <!-- About Section (expanded details, skills, etc.) -->
-        <section id="about" class="relative min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-green-50 to-teal-100 dark:from-green-900 dark:to-teal-900 text-center text-gray-900 dark:text-white">
+        <section id="about" class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-green-50 to-teal-100 dark:from-green-900 dark:to-teal-900 text-center text-gray-900 dark:text-white">
           <!-- SVG Diagonal Lines Pattern Background -->
           <div aria-hidden="true" class="absolute left-0 top-0 w-full h-full">
             <svg width="100%" height="100%" class="w-full h-full block dark:hidden" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +117,7 @@ onMounted(() => {
               <rect width="100%" height="100%" fill="url(#diagonal-lines-dark)" />
             </svg>
           </div>
-          <div class="w-full max-w-4xl mx-auto px-4 flex flex-col gap-10 py-16 relative z-10">
+          <div class="max-w-3xl px-4 flex flex-col gap-10 py-16 mx-auto relative z-10">
             <!-- Intro -->
             <div class="text-center">
                 <h2 class="text-4xl font-bold mb-6">About Me</h2>
@@ -266,7 +266,7 @@ onMounted(() => {
             </div>
           </div>
         </section>
-        <section id="contact" class="relative min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-orange-50 to-yellow-100 dark:from-orange-900 dark:to-yellow-900 text-center text-gray-900 dark:text-white">
+        <section id="contact" class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-orange-50 to-yellow-100 dark:from-orange-900 dark:to-yellow-900 text-center text-gray-900 dark:text-white">
           <!-- SVG Radial Gradient Background (more visible) -->
           <div aria-hidden="true" class="absolute left-0 top-0 w-full h-full">
             <svg width="100%" height="100%" class="w-full h-full block dark:hidden" fill="none">
