@@ -96,26 +96,28 @@ watch(menuOpen, (open) => {
     </nav>
     <!-- Mobile nav menu rendered in <body> so it doesn't affect sticky nav -->
     <teleport to="body">
-        <div v-if="menuOpen" class="fixed inset-0 z-50 flex flex-col bg-white dark:bg-gray-900">
-            <!-- Close icon -->
-            <button class="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" @click="menuOpen = false" aria-label="Close menu">
-                <svg class="w-7 h-7 text-gray-900 dark:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
-            <div class="flex-1 flex flex-col justify-center items-center gap-8">
-                <div class="font-bold text-2xl mb-2 text-gray-900 dark:text-white underline">Menu</div>
-                <button v-for="s in sections" :key="s.id" @click="scrollToSection(s.id)" :class="[
-                    'text-2xl font-semibold py-2 px-4 rounded transition-colors w-full text-center',
-                    activeSection === s.id
-                        ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-800'
-                        : 'hover:text-blue-600 dark:hover:text-blue-400 text-gray-900 dark:text-white'
-                ]">
-                    {{ s.label }}
+        <transition name="slide-menu">
+            <div v-if="menuOpen" class="fixed inset-0 z-50 flex flex-col bg-white dark:bg-gray-900">
+                <!-- Close icon -->
+                <button class="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" @click="menuOpen = false" aria-label="Close menu">
+                    <svg class="w-7 h-7 text-gray-900 dark:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
-                <div class="mt-8">
-                    <slot name="mobile-extra" />
+                <div class="flex-1 flex flex-col justify-center items-center gap-8">
+                    <div class="font-bold text-2xl mb-2 text-gray-900 dark:text-white underline">Menu</div>
+                    <button v-for="s in sections" :key="s.id" @click="scrollToSection(s.id)" :class="[
+                        'text-2xl font-semibold py-2 px-4 rounded transition-colors w-full text-center',
+                        activeSection === s.id
+                            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-800'
+                            : 'hover:text-blue-600 dark:hover:text-blue-400 text-gray-900 dark:text-white'
+                    ]">
+                        {{ s.label }}
+                    </button>
+                    <div class="mt-8">
+                        <slot name="mobile-extra" />
+                    </div>
                 </div>
             </div>
-        </div>
+        </transition>
     </teleport>
 </template>
 
@@ -124,6 +126,26 @@ watch(menuOpen, (open) => {
   transition: opacity 0.2s;
 }
 .fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+/* Slide-in animation for mobile menu */
+.slide-menu-enter-active, .slide-menu-leave-active {
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s;
+}
+.slide-menu-enter-from {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-menu-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-menu-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-menu-leave-to {
+  transform: translateX(-100%);
   opacity: 0;
 }
 </style> 
