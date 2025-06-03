@@ -212,7 +212,16 @@ onMounted(() => {
         <section id="projects" class="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-700 text-center text-gray-900 dark:text-white">
             <div class="w-full max-w-4xl mx-auto px-2 sm:px-4">
                 <h2 class="text-2xl sm:text-4xl font-bold mb-4 sm:mb-8">Projects</h2>
-                <ProjectCarousel />
+                <div class="relative flex items-center justify-center">
+                    <!-- Desktop arrows -->
+                    <button @click="$refs.projectCarousel.prev()" class="hidden md:block p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 shadow transition absolute left-0 top-1/2 -translate-y-1/2 z-10" aria-label="Previous">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <ProjectCarousel ref="projectCarousel" />
+                    <button @click="$refs.projectCarousel.next()" class="hidden md:block p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 shadow transition absolute right-0 top-1/2 -translate-y-1/2 z-10" aria-label="Next">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
             </div>
         </section>
 
