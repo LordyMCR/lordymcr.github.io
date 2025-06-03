@@ -47,7 +47,7 @@ function next() {
 <template>
     <div class="relative w-full max-w-3xl mx-auto">
         <div class="overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-700">
-            <div class="flex items-center justify-center h-80 bg-gray-100 dark:bg-gray-700">
+            <div class="flex items-center justify-center h-48 sm:h-80 bg-gray-100 dark:bg-gray-700">
                 <template v-if="projects[current].video">
                     <video :src="projects[current].video" class="h-full w-full object-cover" autoplay loop muted playsinline />
                 </template>
@@ -56,50 +56,52 @@ function next() {
                         <img :src="projects[current].image" :alt="projects[current].title" class="h-full w-full object-cover" />
                     </div>
                     <div v-else class="h-full w-full flex items-center justify-center bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
-                        <span class="text-lg">Image coming soon</span>
+                        <span class="text-base sm:text-lg">Image coming soon</span>
                     </div>
                 </template>
             </div>
-            <div class="p-6 text-center">
-                <div v-if="projects[current].tags" class="flex flex-wrap justify-center gap-2 mb-4">
-                    <span v-for="tag in projects[current].tags" :key="tag" class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full font-semibold text-xs">
+            <div class="p-4 sm:p-6 text-center">
+                <div v-if="projects[current].tags" class="flex flex-wrap justify-center gap-1 sm:gap-2 mb-2 sm:mb-4">
+                    <span v-for="tag in projects[current].tags" :key="tag" class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 sm:px-3 py-1 rounded-full font-semibold text-xs">
                         {{ tag }}
                     </span>
                 </div>
-                <h3 class="text-xl font-bold mb-2">{{ projects[current].title }}
+                <h3 class="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{{ projects[current].title }}
                   <template v-if="current === 1">
                     <span class="ml-2 inline-flex gap-2 align-middle">
                       <a href="https://apps.apple.com/gb/app/driving-theory-test-4-in-1-kit/id829581836" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:underline text-gray-700 dark:text-gray-200">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.564 13.271c-.025-2.568 2.099-3.8 2.192-3.857-1.197-1.748-3.06-1.99-3.715-2.018-1.583-.16-3.09.927-3.89.927-.8 0-2.04-.904-3.36-.88-1.73.025-3.33 1.01-4.22 2.56-1.8 3.12-.46 7.74 1.29 10.27.86 1.23 1.88 2.6 3.22 2.55 1.3-.05 1.8-.82 3.37-.82 1.57 0 2.01.82 3.37.8 1.4-.03 2.28-1.25 3.13-2.48.62-.89.87-1.36 1.36-2.39-3.57-1.36-3.44-4.01-3.42-4.19zm-3.19-7.66c.71-.86 1.19-2.06 1.06-3.26-1.02.04-2.25.68-2.98 1.54-.66.76-1.24 1.97-1.02 3.13 1.13.09 2.29-.58 3-1.41z"/></svg>
-                        <span>iOS</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.564 13.271c-.025-2.568 2.099-3.8 2.192-3.857-1.197-1.748-3.06-1.99-3.715-2.018-1.583-.16-3.09.927-3.89.927-.8 0-2.04-.904-3.36-.88-1.73.025-3.09.927-3.89.927-.8 0-2.04-.904-3.36-.88-1.73.025-3.33 1.01-4.22 2.56-1.8 3.12-.46 7.74 1.29 10.27.86 1.23 1.88 2.6 3.22 2.55 1.3-.05 1.8-.82 3.37-.82 1.57 0 2.01.82 3.37.8 1.4-.03 2.28-1.25 3.13-2.48.62-.89.87-1.36 1.36-2.39-3.57-1.36-3.44-4.01-3.42-4.19zm-3.19-7.66c.71-.86 1.19-2.06 1.06-3.26-1.02.04-2.25.68-2.98 1.54-.66.76-1.24 1.97-1.02 3.13 1.13.09 2.29-.58 3-1.41z"/></svg>
+                        <span class="text-xs sm:text-sm">iOS</span>
                       </a>
                       <a href="https://play.google.com/store/apps/details?id=uk.co.focusmm.DTSCombo&hl=en_GB" target="_blank" rel="noopener" class="inline-flex items-center gap-1 hover:underline text-gray-700 dark:text-gray-200">
-                        <svg class="w-5 h-5" viewBox="0 0 48 48" fill="currentColor">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 48 48" fill="currentColor">
                           <path d="M7.5 6.5v35c0 1.1 1.2 1.8 2.1 1.2l27.7-17.5c.9-.6.9-1.9 0-2.5L9.6 5.2C8.7 4.6 7.5 5.3 7.5 6.5z"/>
                         </svg>
-                        <span>Android</span>
+                        <span class="text-xs sm:text-sm">Android</span>
                       </a>
                     </span>
                   </template>
                 </h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ projects[current].description }}</p>
-                <ul v-if="projects[current].highlights" class="text-left mt-4 list-disc list-inside text-gray-700 dark:text-gray-200">
+                <p class="text-gray-600 dark:text-gray-300 mb-2 sm:mb-4 text-sm sm:text-base">{{ projects[current].description }}</p>
+                <ul v-if="projects[current].highlights" class="text-left mt-2 sm:mt-4 list-disc list-inside text-gray-700 dark:text-gray-200 text-xs sm:text-base">
                   <li v-for="(item, i) in projects[current].highlights" :key="i">{{ item }}</li>
                 </ul>
             </div>
         </div>
-        <!-- Arrows -->
-        <button @click="prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-900/80 rounded-full p-2 shadow hover:bg-blue-100 dark:hover:bg-blue-900 transition">
-            <span class="sr-only">Previous</span>
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-        </button>
-        <button @click="next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-900/80 rounded-full p-2 shadow hover:bg-blue-100 dark:hover:bg-blue-900 transition">
-            <span class="sr-only">Next</span>
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-        </button>
-        <!-- Dots -->
-        <div class="flex justify-center mt-4 gap-2">
-            <button v-for="(p, i) in projects" :key="i" @click="current = i" :class="['w-3 h-3 rounded-full', i === current ? 'bg-blue-600' : 'bg-gray-400 dark:bg-gray-700']" />
+        <!-- Arrows below card -->
+        <div class="flex justify-between items-center mt-2 sm:mt-4">
+            <button @click="prev" class="p-1 sm:p-2 rounded-full bg-white/80 dark:bg-gray-900/80 shadow hover:bg-blue-100 dark:hover:bg-blue-900 transition">
+                <span class="sr-only">Previous</span>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <!-- Dots -->
+            <div class="flex justify-center gap-1 sm:gap-2">
+                <button v-for="(p, i) in projects" :key="i" @click="current = i" :class="['w-2 h-2 sm:w-3 sm:h-3 rounded-full', i === current ? 'bg-blue-600' : 'bg-gray-400 dark:bg-gray-700']" />
+            </div>
+            <button @click="next" class="p-1 sm:p-2 rounded-full bg-white/80 dark:bg-gray-900/80 shadow hover:bg-blue-100 dark:hover:bg-blue-900 transition">
+                <span class="sr-only">Next</span>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </button>
         </div>
     </div>
 </template> 
