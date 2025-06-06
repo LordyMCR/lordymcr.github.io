@@ -18,4 +18,8 @@ The site is designed to provide a comprehensive overview of my skills, backgroun
 - Accessible and user-friendly UI
 - Contact and quick links
 
+**Live Site Link:**
+[https://lordymcr.github.io](https://lordymcr.github.io)
+
+
 For more information, visit the live site or connect via the links provided on the homepage.

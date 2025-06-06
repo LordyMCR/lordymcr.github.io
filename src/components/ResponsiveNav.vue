@@ -51,24 +51,19 @@ watch(menuOpen, (open) => {
 
 <template>
     <nav class="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-900 backdrop-blur shadow flex items-center justify-between px-4 py-3">
-        <!-- Mobile: Burger left, name center, dark mode right -->
         <div class="flex items-center w-full md:hidden">
-            <!-- Burger -->
             <button class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" @click="menuOpen = true" aria-label="Open menu">
                 <svg v-if="!menuOpen" class="w-7 h-7 text-gray-900 dark:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
-            <!-- Name center -->
             <div class="flex-1 flex justify-center">
                 <div class="font-bold text-xl text-gray-900 dark:text-white select-none cursor-pointer" @click="scrollToSection('home')">
                     Daniel Lord
                 </div>
             </div>
-            <!-- Dark mode toggle right -->
             <div class="flex items-center">
                 <slot />
             </div>
         </div>
-        <!-- Desktop nav -->
         <div class="hidden md:flex w-full items-center justify-between">
             <div class="font-bold text-xl text-gray-900 dark:text-white select-none cursor-pointer" @click="scrollToSection('home')">
                 Daniel Lord
@@ -98,7 +93,6 @@ watch(menuOpen, (open) => {
     <teleport to="body">
         <transition name="slide-menu">
             <div v-if="menuOpen" class="fixed inset-0 z-50 flex flex-col bg-white dark:bg-gray-900">
-                <!-- Close icon -->
                 <button class="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" @click="menuOpen = false" aria-label="Close menu">
                     <svg class="w-7 h-7 text-gray-900 dark:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
@@ -128,7 +122,6 @@ watch(menuOpen, (open) => {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
-/* Slide-in animation for mobile menu */
 .slide-menu-enter-active, .slide-menu-leave-active {
   transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s;
 }

@@ -7,7 +7,7 @@ const experiences = [
     company: 'TheGameCreators Ltd',
     years: 'Sep 2023 – present',
     logo: '/images/thegamecreators-logo.png',
-    icon: 'code', // Placeholder, use SVG below
+    icon: 'code',
     description: 'Building and maintaining the Driving Theory Test 4 in 1 Kit, the UK\'s No. 1 Paid iOS/Android app, focusing on backend and frontend development.',
     tags: ['Laravel', 'Vue', 'React Native', 'PHP', 'MySQL', 'API Development', 'UI/UX', 'Team Collaboration'],
     bullets: [
@@ -70,7 +70,6 @@ function next() {
         <div class="flex transition-transform duration-500" :style="{ transform: `translateX(-${current * 100}%)` }">
           <div v-for="(exp, i) in experiences" :key="i" class="w-full flex-shrink-0">
             <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-3 sm:p-6 flex flex-col gap-1 sm:gap-4 h-full border border-gray-200 dark:border-gray-700">
-              <!-- Icon/Logo -->
               <div class="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
                 <div class="p-2 sm:p-3 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14">
                   <img v-if="exp.logo" :src="exp.logo" :alt="exp.company + ' logo'" class="max-h-6 sm:max-h-8 max-w-16 sm:max-w-24 object-contain dark:invert" />
@@ -91,11 +90,9 @@ function next() {
                 <div class="ml-auto text-xs sm:text-sm font-semibold text-gray-500 dark:text-gray-400">{{ exp.years }}</div>
               </div>
               <div class="text-sm sm:text-base text-gray-700 dark:text-gray-200 mb-1 sm:mb-2">{{ exp.description }}</div>
-              <!-- Tags -->
               <div class="flex flex-wrap gap-0.5 sm:gap-2 mb-1 sm:mb-2">
                 <span v-for="tag in exp.tags" :key="tag" class="px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200">{{ tag }}</span>
               </div>
-              <!-- Bullets -->
               <ul class="list-disc list-inside text-left text-gray-700 dark:text-gray-200 pl-2 space-y-0.5 sm:space-y-1 text-xs sm:text-base">
                 <li v-for="b in exp.bullets" :key="b">{{ b }}</li>
               </ul>
@@ -107,7 +104,6 @@ function next() {
         <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
       </button>
     </div>
-    <!-- Mobile arrows -->
     <div class="flex justify-between mt-2 sm:mt-4 md:hidden">
       <button @click="prev" class="p-1 sm:p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 shadow transition" aria-label="Previous">
         <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
@@ -120,7 +116,6 @@ function next() {
 </template>
 
 <style scoped>
-/**** Hide scrollbar for carousel ****/
 ::-webkit-scrollbar {
   display: none;
 }
