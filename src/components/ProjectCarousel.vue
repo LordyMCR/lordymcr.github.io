@@ -41,9 +41,16 @@ const projects = [
     {
         title: 'Premier League Tournament Game (WIP)',
         description: 'A full stack web app for hosting friendly Premier League prediction tournaments. Each game week, players pick a team they think will win—earning 3 points for a win, 1 for a draw, and 0 for a loss. The player with the most points at the end wins. Features Normal and Randomised modes. Built with PHP (Laravel), Vue.js, and Tailwind CSS. Currently in development—more features and polish coming soon!',
-        image: 'https://placehold.co/600x400?text=Coming+Soon',
+        image: 'images/PLT-image.jpg',
         video: '',
-        tags: ['PHP', 'Laravel', 'Vue', 'Tailwind', 'Full Stack', 'In Progress'],
+        url: 'https://pl-tournament.com',
+        status: 'Closed Alpha',
+        tags: ['PHP', 'Laravel', 'Vue', 'Tailwind', 'Full Stack', 'Closed Alpha'],
+        highlights: [
+            'Two tournament modes: Normal and Randomised team assignment.',
+            'Weekly team picks with 3-1-0 points system and cut-off windows.',
+            'User profiles, approvals, and notifications for tournament events.',
+        ],
     },
 ];
 
@@ -66,8 +73,11 @@ defineExpose({ prev, next });
                 <div class="flex transition-transform duration-500" :style="{ transform: `translateX(-${current * 100}%)` }">
                     <div v-for="(project, i) in projects" :key="i" class="w-full flex-shrink-0">
                         <div class="overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-700">
-                            <div class="flex items-center justify-center aspect-[16/9] bg-gray-100 dark:bg-gray-700">
+                            <div class="relative flex items-center justify-center aspect-[16/9] bg-gray-100 dark:bg-gray-700">
                                 <img :src="project.image" :alt="project.title" class="w-full h-full object-cover rounded-t-xl" />
+                                <span v-if="project.status" class="absolute top-2 right-2 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 shadow">
+                                  {{ project.status }}
+                                </span>
                             </div>
                             <div class="p-4 sm:p-6 text-center">
                                 <div v-if="project.tags" class="flex flex-wrap justify-center gap-1 sm:gap-2 mb-2 sm:mb-4">
@@ -93,6 +103,13 @@ defineExpose({ prev, next });
                                 <ul v-if="project.highlights" class="text-left mt-2 sm:mt-4 list-disc list-inside text-gray-700 dark:text-gray-200 text-xs sm:text-base">
                                   <li v-for="(item, j) in project.highlights" :key="j">{{ item }}</li>
                                 </ul>
+                                <div v-if="project.url" class="mt-3 sm:mt-4">
+                                  <a :href="project.url" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 015.657 5.656l-3.536 3.536a4 4 0 01-5.657-5.656M10 14l4-4m2-2h3a1 1 0 011 1v3"/></svg>
+                                    <span>Visit site</span>
+                                    <span v-if="project.status" class="text-xs opacity-80">({{ project.status }})</span>
+                                  </a>
+                                </div>
                             </div>
                         </div>
                     </div>
