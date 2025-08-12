@@ -41,11 +41,11 @@ const projects = [
     {
         title: 'Premier League Tournament Game (WIP)',
         description: 'A full stack web app for hosting friendly Premier League prediction tournaments. Each game week, players pick a team they think will win—earning 3 points for a win, 1 for a draw, and 0 for a loss. The player with the most points at the end wins. Features Normal and Randomised modes. Built with PHP (Laravel), Vue.js, and Tailwind CSS. Currently in development—more features and polish coming soon!',
-        image: 'images/PLT-image.jpg',
+        image: 'images/PLT-image.png',
         video: '',
         url: 'https://pl-tournament.com',
         status: 'Closed Alpha',
-        tags: ['PHP', 'Laravel', 'Vue', 'Tailwind', 'Full Stack', 'Closed Alpha'],
+        tags: ['PHP', 'Laravel', 'Vue', 'Tailwind', 'Full Stack'],
         highlights: [
             'Two tournament modes: Normal and Randomised team assignment.',
             'Weekly team picks with 3-1-0 points system and cut-off windows.',
