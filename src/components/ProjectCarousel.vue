@@ -28,7 +28,7 @@ const projects = [
     },
     {
         title: 'Premier League Tournament Hosting Platform',
-        description: 'A full stack web app for hosting friendly Premier League prediction tournaments. Each game week, players pick a team they think will win—earning 3 points for a win, 1 for a draw, and 0 for a loss. The player with the most points at the end wins. Features Full / Half / Custom Range seasons for 24/25 season. Built with PHP (Laravel), Vue.js, and Tailwind CSS. Currently in development—more features and polish coming soon!',
+        description: 'A full stack web app for hosting friendly Premier League prediction tournaments. Each game week, players pick a team they think will win—earning 3 points for a win, 1 for a draw, and 0 for a loss. The player with the most points at the end wins. Features Full / Half / Custom Range tournament types for 24/25 season. Built with PHP (Laravel), Vue.js, and Tailwind CSS. Currently in development—more features and polish coming soon!',
         image: 'images/PLT-image.png',
         video: '',
         url: 'https://www.pl-tournament.com',
