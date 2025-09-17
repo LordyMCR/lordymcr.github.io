@@ -64,7 +64,7 @@ onMounted(() => {
                     Full Stack Developer • Software Engineer • Award-Winning Graduate
                 </h2>
                 <p class="text-base sm:text-lg md:text-xl leading-relaxed mb-2 sm:mb-4">
-                    I'm a highly focused and driven full stack developer with First Class Honours and award-winning results. I have 1.5+ years of professional experience building modern web and mobile applications using Laravel, Vue, React Native, and more. I thrive on solving complex problems, delivering user-friendly solutions, and collaborating in both team and independent environments.
+                    I'm a highly focused and driven full stack developer with First Class Honours and award-winning results. I have 2+ years of professional experience building modern web and mobile applications using Laravel, Vue, React Native, and more. I thrive on solving complex problems, delivering user-friendly solutions, and collaborating in both team and independent environments.
                 </p>
                 <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mt-2">
                     <a href="https://linkedin.com/in/daniel-lord-b83b71a7" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 font-semibold shadow hover:bg-blue-200 dark:hover:bg-blue-800 transition">
@@ -154,7 +154,7 @@ onMounted(() => {
                     <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center">Class Honours</div>
                 </div>
                 <div class="flex flex-col items-center min-w-[90px]">
-                    <div class="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400">1.5+</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400">2+</div>
                     <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center">Years as Developer</div>
                 </div>
             </div>
