@@ -3,9 +3,18 @@ import { ref } from 'vue';
 
 const experiences = [
   {
-    title: 'Full Stack Developer',
+    title: 'Junior Backend Developer',
+    company: 'Rezzil',
+    years: 'Sep 2025 – present',
+    logo: '/images/rezzil-logo.png',
+    icon: 'code',
+    description: 'Developing backend solutions for cutting-edge sports technology, analysis, broadcasting, and VR training platforms.',
+    tags: ['Laravel', 'PHP', 'VR Development', 'Backend Development', 'API Development', 'Sports Technology', 'Broadcasting Tools'],
+  },
+  {
+    title: 'Software Developer',
     company: 'TheGameCreators Ltd',
-    years: 'Sep 2023 – present',
+    years: 'Sep 2023 – Sep 2025',
     logo: '/images/thegamecreators-logo.png',
     icon: 'code',
     description: 'Building and maintaining the Driving Theory Test 4 in 1 Kit, the UK\'s No. 1 Paid iOS/Android app, focusing on backend and frontend development.',
